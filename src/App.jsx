@@ -43,7 +43,7 @@ function App() {
               <div className='app_page'>
                 <Sidebar user={user} />
                 <div className='app_post'>
-                  <NewsFeed user={user}/>
+                  <NewsFeed user={user} />
                 </div>
                 <Sidebar2 user={user} />
               </div>

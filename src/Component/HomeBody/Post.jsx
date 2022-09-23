@@ -21,7 +21,6 @@ function Post({ postId, user, username, caption, imageUrl, noLikes, postUserId }
                 setPostUser(snapshot.data())
             })
         }
-        console.log(postUserId)
     }, [postUserId])
 
     // use to get all comments
@@ -54,7 +53,7 @@ function Post({ postId, user, username, caption, imageUrl, noLikes, postUserId }
                     }
                 }
             })
-    }, [postId, user.uid]);
+    }, [postId, user.uid, show]);
 
     const likeHandle = (event) => {
         event.preventDefault();
@@ -121,7 +120,7 @@ function Post({ postId, user, username, caption, imageUrl, noLikes, postUserId }
                 console.log(snapshot.data())
             })
         }
-    }, [])
+    }, [postUserId])
 
 
     return (
@@ -135,7 +134,6 @@ function Post({ postId, user, username, caption, imageUrl, noLikes, postUserId }
                 <h3 onClick={() => {
                     window.location.href = `/${username}/${user?.uid}`
                 }} style={{ cursor: 'pointer' }}>{username}</h3>
-                <i class="post_verified" />
             </div>
 
             <h4 className="post_text">{caption}</h4>

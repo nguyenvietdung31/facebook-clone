@@ -16,10 +16,10 @@ function Upload() {
     const [scroll, setScroll] = useState('paper');///////////////////////////////////////////////////////
 
     const handleChange = (e) => {
-        if (e.target.file[0]) {
-            setImage(e.target.file[0]);
+        if (e.target.files[0]) {
+            setImage(e.target.files[0]);
         }
-        setImageURL(URL.createObjectURL(e.target.file[0]));
+        setImageURL(URL.createObjectURL(e.target.files[0]));
     };
     const uploadFileWithClick = () => {
         document.getElementsByClassName('ifu')[0].click() /// ifu = inputForUpload
