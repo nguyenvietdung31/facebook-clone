@@ -1,0 +1,29 @@
+.sidebar{
+    flex: 0.2;
+    margin-top: 20px;
+}
+.sidebar .hr{
+    margin-left: 13px;
+    margin-bottom: 10px;
+    margin-right: 16px;
+    margin-top: 10px;
+    border-bottom: 2px solid #3e4042;
+}
+.shortcut{
+    margin-left: 13px;
+    color: #a3a6ac ;
+}
+.policy{
+    display: flex;
+    flex-direction: row;
+    color: #a3a6ac;
+    width: 260px;
+    margin-left: 13px;
+    flex-wrap: wrap;
+    margin-right: 16px;
+}
+.policy p{
+    font-weight: 400;
+    font-size: 13px;
+    color: #b3b0b8;
+}

@@ -1,0 +1,29 @@
+.sidebar2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 25%;
+}
+.contact{
+    margin-top: 10px;
+}
+h1{
+    font-size: 16px;
+    font-weight: 600;
+    color: #b0b3b8;
+    cursor: context-menu;
+    margin-left: 16px;
+}
+.detail{
+    display: flex;
+    flex-direction: row;
+}
+.group_chat{
+    margin-top: 10px;
+}
+.searchIcon2{
+    color: white;
+}
+.moreIcon{
+    color: white;
+}

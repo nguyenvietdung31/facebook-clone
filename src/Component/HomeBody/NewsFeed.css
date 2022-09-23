@@ -1,0 +1,18 @@
+.newsfeed {
+    flex: 1;
+    min-width: fit-content;
+    height: 700px;
+    margin-left:50%;
+}
+
+.newsfeed {
+    overflow-y: scroll;
+}
+.newsfeed::-webkit-scrollbar {
+    display:none;
+}
+
+.newsfeed {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

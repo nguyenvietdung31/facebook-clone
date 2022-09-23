@@ -1,0 +1,46 @@
+.sidebar2Row{
+    display: flex;
+    flex-direction: row;
+    margin-left: 16px;
+    cursor: pointer;
+    padding: 10px;
+}
+.sidebar2Row:hover{
+    background-color: #2f3031;
+    border-radius: 10px;
+    width: 80%;
+}
+.avatar{
+    height: 36px !important;
+    width: 36px !important;
+}
+.sidebar2Row h1{
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+.searchIcon2 {
+    background-image: url(https://facebook.com/rsrc.php/v3/yH/r/hD_JBkCe96v.png);
+    background-size: 33px 1483px;
+    background-repeat: no-repeat;
+    width: 16px;
+    cursor: pointer;
+    margin-left: 190px;
+    height: 16px;
+    background-position: 0 -1398px;
+    vertical-align: -0.25em;
+}
+
+.more {
+    background-image: url(https://facebook.com/rsrc.php/v3/yH/r/hD_JBkCe96v.png);
+    background-size: 33px 1483px;
+    background-repeat: no-repeat;
+    width: 16px;
+    float: right;
+    height: 16px;
+    cursor: pointer;
+    margin-left: 30px;
+    background-position: 0 -1364px;
+    vertical-align: -0.25em;
+}
