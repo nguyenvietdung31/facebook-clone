@@ -13,20 +13,18 @@ function Upload() {
     const [imageURL, setImageURL] = useState('');
     const [caption, setCaption] = useState('');
     const [noLike, setNoLike] = useState(0);
-    const [scroll, setScroll] = useState('paper');///////////////////////////////////////////////////////
 
     const handleChange = (e) => { /// upload file (picture)
         if (e.target.files[0]) {
             setImage(e.target.files[0]);
         }
-        setImageURL(URL.createObjectURL(e.target.files[0]));
+        setImageURL(URL.createObjectURL(e.target.files[0]));// create url for image
     };
     const uploadFileWithClick = () => {
         document.getElementsByClassName('ifu')[0].click() /// ifu = inputForUpload, click to open select picture modal
     }
-    const handleClickOpen = (scrollType) => () => { //open upload modal
+    const handleClickOpen = () => () => { //open upload modal
         setOpen(true);
-        setScroll(scrollType)
     }
     const handleClose = () => { // close upload modal
         setOpen(false)
@@ -83,7 +81,6 @@ function Upload() {
             <Dialog
                 open={open}
                 onClose={handleClose}
-                scroll={scroll}
             >
                 <div className='upload_modal'>
                     <div className='modalInit'>

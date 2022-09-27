@@ -67,3 +67,6 @@
 .sidebarRow_icon.vanish {
     display: none;
 }
+.dropdownDisplaySeeMore{
+    fill: white;
+}
