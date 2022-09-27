@@ -79,7 +79,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-left: 170px;
+  margin-left: 120px;
 }
 
 .homeHeader_otherIcons {
@@ -305,13 +305,13 @@
 
 .logout {
   vertical-align: -0.25em;
-  background-position: 0 -1011px;
-  background-image: url(https://facebook.com/rsrc.php/v3/y-/r/EOPZGFLdpJY.png);
-  background-size: 25px 2268px;
-  background-repeat: no-repeat;
+  background-position: 28px -598px;
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yh/r/z7oPL_uRLiD.png);
+  /* background-size: 25px 2268px;
+  background-repeat: no-repeat; */
   display: inline-block;
-  height: 20px;
-  width: 20px;
+  height: 23px;
+  width: 26px;
 }
 
 .iconDrop {
@@ -326,35 +326,35 @@
 
 .darkMode {
   vertical-align: -0.25em;
-  background-position: 0 -1179px;
-  background-image: url(https://facebook.com/rsrc.php/v3/y-/r/EOPZGFLdpJY.png);
-  background-size: 25px 2268px;
-  background-repeat: no-repeat;
+  background-position: 28px -737px;
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/Y4P-g5bdaLr.png);
+  /* background-size: 25px 2268px;
+  background-repeat: no-repeat; */
   display: inline-block;
-  height: 20px;
-  width: 20px;
+  height: 22px;
+  width: 26px;
 }
 
 .helpAndSupport {
   vertical-align: -0.25em;
-  background-image: url(https://facebook.com/rsrc.php/v3/y-/r/EOPZGFLdpJY.png);
-  background-size: 25px 2268px;
-  background-repeat: no-repeat;
+  background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yA/r/evf3ivBl7yO.png);
+  /* background-size: 25px 2268px;
+  background-repeat: no-repeat; */
   display: inline-block;
-  background-position: 0 -1326px;
-  height: 20px;
-  width: 20px;
+  background-position: 45px -1212px;
+  height: 21px;
+  width: 26px;
 }
 
 .settingIcon {
   vertical-align: -0.25em;
   background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yv/r/YwJGgsZAKPa.png);
-  background-size: 140px 211px;
-  background-repeat: no-repeat;
+  /* background-size: 140px 211px;
+  background-repeat: no-repeat; */
   display: inline-block;
-  height: 24px !important;
-  width: 20px !important;
-  background-position: -72px -65px;
+  height: 28px !important;
+  width: 26px !important;
+  background-position: 90px -57px;
 }
 
 .hr {

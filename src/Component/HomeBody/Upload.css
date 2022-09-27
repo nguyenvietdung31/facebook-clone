@@ -185,7 +185,7 @@
 .publishOptions{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     border: 1px solid rgba(128,128,128,0.5);
     border-radius: 5px;
     margin-left: 10px;
@@ -200,50 +200,41 @@
     padding: 18px;
 }
 
-.roomIcon {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATYAAACjCAMAAAA3vsLfAAAAbFBMVEX39/cAAAD///9QUFBoaGj5+fmioqL8/PyWlpaTk5Pj4+Oampqtra1MTEzx8fHR0dHr6+s1NTV1dXVtbW3AwMDKyso6OjpjY2N6enqMjIzY2NgLCwtUVFRAQECenp4pKSmEhIQfHx8nJyfCwsJy0ICVAAAC30lEQVR4nO3c6XKqMBiAYfhqRClo61KP3bTt/d/jwQVlC5FAT0+T9/nTOjiO8w6LaJIgAAAAAAAAAAAAAAAAAAAAAAAAAAAA3lCR3C5SP/12/wtKojjZL0e3WWxXM4mMr/kv3viPioLJLuwmXbWHi6LAXPZXUzLu2OzoaS7615RkF6brlif8emq2samWmYjuQJTp8Qlzdw9U9fBoWS0MF5rdSSan7Rtndzc1s68Whn8au+TVwjtns8lrj2phOG4II/f5Vmez2V0NCuLa6etazdlsatazWr1MoZqz2WTbN1v4XN7dLuc1p7P1rla5mpaquZpNzftne1GF3a1czdVs0bR/tuJFQSqv52g2WQ6QbXW59axWczZbvw9tJ0merXKEOpztboBs43O24icPst2aTd7rm8hmytawr5HNmK2xGtkM2epXA7KZs9U+eZDthmy6amRry6atRrYWSfN5jWzt3vSbyGaFbGcvZDNn21Tv9afd7v39zJaKSFp4vJRFp2p+Zns6Di66nPHTuGs1L7PtTiO3otPPz7u1yL5jNR+zfQTnsWzqM3uUZP/oP5+RLfcyu4wBDD6mKvtj8UO0f9ni6gDKpHs1/7Idqj0s3q4DU1cW1bzLNs9OaYcb9Ne82tqmmm/Z1pdjcnSq9mxVzbNsX/L1mf+/OFSL7ar5lW0VF7/U2GcnOctqXmXbjsqPp4FtNZ+ydfuOg2zfgGxkuyKblUGypfpNZNNL9Pf4ZNMbN401IpsxW6TtRra2bI1j28hmzKbrRrb2bJpJSGQzZGvuRjZTtsZuZDNmazq/uZpt2HkJtW6uZht4Fkx13LOj2Qafc1Xp5mi24Wf4lbs5mm2I+aTlVQbK5zdnsw0/e7m4v7ma7Tvmyr+3bHQFKzPYYR0QK6w6Y4c1juzYr6h17/GKWof122yG/JnWb3t0fP22gNUCbbE2pS1WQgUAAAAAAAAAAAAAAAAAAAAAAAAAAN39BZEoKY8oIt6sAAAAAElFTkSuQmCC);
-    background-size: 36px 25px;
+.pictureIcon {
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/zB8OjEYTfij.png);
+    /* background-size: 36px 25px; */
     /* background-repeat: no-repeat; */
-    height: 22px;
-    width: 34px;
+    height: 27px;
+    width: 41px;
+    background-position: 75px 1236px;
 }
 
 .friendsIcon {
     vertical-align: -0.25em;
-    object-fit: cover;
-    background-image: url(https://facebook.com/rsrc.php/v3/ye/r/yUmeYUiEaF0.png);
-    background-size: 33px 643px;
-    background-repeat: no-repeat;
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/zB8OjEYTfij.png);
     display: inline-block;
-    background-position: 0 -158px;
-    height: 24px;
-    width: 24px;
+    background-position: 75px 1335px;
+    height: 27px;
+    width: 41px;
 }
 
-.tagIcon {
+.feelingIcon {
     vertical-align: -0.25em;
-    object-fit: cover;
-    background-image: url(https://facebook.com/rsrc.php/v3/yk/r/Jk43U6fk1vT.png);
-    background-size: 25px 675px;
-    background-repeat: no-repeat;
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/zB8OjEYTfij.png);
     display: inline-block;
-    background-position: 0 -550px;
-    height: 24px;
-    margin-top: 15px;
-    width: 24px;
+    background-position: 75px 1360px;
+    height: 27px;
+    width: 41px;
 }
-
 .moreIcon {
     vertical-align: -0.25em;
-    object-fit: cover;
-    background-image: url(https://facebook.com/rsrc.php/v3/yH/r/hD_JBkCe96v.png);
-    background-size: 33px 1483px;
-    background-repeat: no-repeat;
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/zB8OjEYTfij.png);
     display: inline-block;
-    background-position: 0 -258px;
-    height: 24px;
-    width: 24px;
+    background-position: 75px 1388px;
+    height: 27px;
+    width: 41px;
 }
+
 
 .Icon {
     margin-left: 15px;
@@ -252,6 +243,8 @@
 
 .right {
     margin-right: 10px;
+    display: flex;
+    flex-direction: row;
 }
 
 .Icon:hover {

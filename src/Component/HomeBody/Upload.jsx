@@ -139,11 +139,9 @@ function Upload() {
                             <h1>Add to post</h1>
                         </div>
                         <div className='right'> {/* chua lay dc hinh icon */}
-                            <div className="Icon roomIcon" onClick={uploadFileWithClick}></div>
-                            <div className="Icon photoIcon" onClick={uploadFileWithClick}></div>
-                            <div className="Icon friendsIcon"></div>
+                            <div className="Icon pictureIcon" onClick={uploadFileWithClick} title='Image'></div>
+                            <div className="Icon friendsIcon" title='tag friend'></div>
                             <div className="Icon feelingIcon"></div>
-                            <div className="Icon tagIcon"></div>
                             <div className="Icon moreIcon"></div>
                         </div>
                     </div>
