@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 100%;
     margin-left: 25%;
+    margin-top: 20px;
 }
 .contact{
     margin-top: 10px;
@@ -24,6 +25,6 @@ h1{
 .searchIcon2{
     color: white;
 }
-.moreIcon{
+.moreIcon2{
     color: white;
 }
