@@ -14,8 +14,8 @@ function Login() {
   const handleLogin = (event) =>{
     event.preventDefault();
 
-    auth.signInWithEmailAndPassword(email,password).then((auth)=>{ // nếu đúng email và pass thì sẽ điều hướng đến localhost:/
-      navigate("/")
+    auth.signInWithEmailAndPassword(email,password).then((auth)=>{ 
+      navigate("/") // nếu đúng email và pass thì sẽ điều hướng đến localhost:/
     }).catch((error)=>{ // bắt lỗi của firebase
       if(error.message==="The password is invalid or the user doesn't have a password"){
         alert("Please check your credentials again");

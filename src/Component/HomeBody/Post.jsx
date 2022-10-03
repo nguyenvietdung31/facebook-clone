@@ -8,7 +8,7 @@ function Post({ postId, user, username, caption, imageUrl, noLike, postUserId })
 
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState('');
-    const [show, setShow] = useState('like2');
+    const [show, setShow] = useState('liked');
     const [show2, setShow2] = useState('textforlike');
     const [posterImage, setPosterImage] = useState('')
 
@@ -32,7 +32,7 @@ function Post({ postId, user, username, caption, imageUrl, noLike, postUserId })
             });
         }
         return () => {
-            unsubscribe();
+            unsubscribe(); // A function returned by onSnapshot() that removes the listener
         }
     }, [postId]);
 
@@ -44,11 +44,11 @@ function Post({ postId, user, username, caption, imageUrl, noLike, postUserId })
             .get()
             .then(doc2 => {
                 if (doc2.data()) {
-                    if (show === 'like2') {///////////
-                        setShow('like2 blue');
+                    if (show === 'liked') {///////////
+                        setShow('liked blue');
                         setShow2('textforlike bluetextforlike')
                     } else {
-                        setShow('like2');
+                        setShow('liked');
                         setShow2('textforlike')
                     }
                 }
@@ -57,11 +57,11 @@ function Post({ postId, user, username, caption, imageUrl, noLike, postUserId })
 
     const likeHandle = (event) => {
         event.preventDefault();
-        if (show === 'like2') {/////////
-            setShow('like2 blue');
+        if (show === 'liked') {/////////
+            setShow('liked blue');
             setShow2('textforlike bluetextforlike')
         } else {
-            setShow('like2');
+            setShow('liked');
             setShow2('textforlike')
         }
 
@@ -69,9 +69,9 @@ function Post({ postId, user, username, caption, imageUrl, noLike, postUserId })
             .doc(postId)
             .get()
             .then(docc => {
-                const data = docc.data()
+                const data = docc.data() // data: Retrieves all fields in the document as an Object. Returns 'undefined' if the document doesn't exist.
                 console.log(show)
-                if (show === 'like2') {
+                if (show === 'liked') {
                     db.collection("posts")
                         .doc(postId)
                         .collection("likes")
@@ -159,7 +159,7 @@ function Post({ postId, user, username, caption, imageUrl, noLike, postUserId })
                 </div>
                 <div className="comment">
                     <i className="comment2" />
-                    <h3 className="dope">Comment</h3>
+                    <h3>Comment</h3>
                 </div>
                 <div className="share">
                     <i className="share2" />
@@ -173,21 +173,22 @@ function Post({ postId, user, username, caption, imageUrl, noLike, postUserId })
                         alt=""
                         src={user?.photoURL}
                     />
-                    <input className="commentInputBox" type="text" placeholder="Write a comment ... " value={comment} onChange={(e) => setComment(e.target.value)} />
-                    <input type="submit" disabled={!comment} className="transparent__submit" />
+                    <input className="commentInputBox" type="text"
+                        placeholder="Write a comment ... " value={comment} onChange={(e) => setComment(e.target.value)} />
+                    <input type="submit" disabled={!comment} className="transparent_submit" />
                 </div>
                 <p className="pressEnterToPost">Press Enter to post</p>
             </form>
 
             {
                 comments.map((comment) => (
-                    <div className={`comments__show ${comment.username === postUser?.displayName && 'myself'}`}>
+                    <div className={`comments_show ${comment.username === postUser?.displayName && 'myself'}`}>
                         <Avatar
                             className="post_avatar2"
                             alt=""
                             src={comment.photoURL}
                         />
-                        <div className="container__comments">
+                        <div className="container_comments">
                             <p><span>{comment.username}</span><i className="post_verified"></i>&nbsp;{comment.text}</p>
                         </div>
                     </div>

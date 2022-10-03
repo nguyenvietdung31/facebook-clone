@@ -11,9 +11,6 @@
 .upload.none {
     display: none;
 }
-
-
-
 .postArea{
     display: flex;
     flex-direction: row;
@@ -327,6 +324,10 @@ Dialog {
 
 .left > h1 {
     cursor: pointer;
+}
+.left > h1:hover {
+    background-color: #3E4042;
+    border-radius: 20px;
 }
 
 .hidden {

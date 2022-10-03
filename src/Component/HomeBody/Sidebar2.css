@@ -24,7 +24,16 @@ h1{
 }
 .searchIcon2{
     color: white;
+    width: 16px;
+    cursor: pointer;
+    margin-left: 190px;
+    height: 16px;
 }
 .moreIcon2{
     color: white;
+    width: 16px;
+    float: right;
+    height: 16px;
+    cursor: pointer;
+    margin-left: 30px;
 }

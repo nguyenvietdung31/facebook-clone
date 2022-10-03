@@ -1,0 +1,25 @@
+Firebase method
+To create or overwrite a single document, use the set() method:
+    If the document does not exist, it will be created. 
+    If the document does exist, its contents will be overwritten with the newly provided data, 
+    unless you specify that the data should be merged into the existing document, as follows:
+    If you're not sure whether the document exists, pass the option to merge the new data with any existing document to avoid overwriting entire documents. 
+    For documents containing maps, note that specifying a set with a field containing an empty map will overwrite the target document's map field.
+overwritten: ghi đè (thay thế cái đầu tiên thành cái thứ hai)
+merge: hợp nhất(kết hợp 2 cái lại với nhau)
+
+When you use set() to create a document, you must specify an ID for the document to create.
+
+But sometimes there isn't a meaningful ID for the document, and it's more convenient to let Cloud Firestore auto-generate an ID for you. 
+You can do this by calling add()
+
+In some cases, it can be useful to create a document reference with an auto-generated ID, then use the reference later. 
+For this use case, you can call doc()
+Get a DocumentReference for the document within the collection at the specified path. 
+If no path is specified, an automatically-generated unique ID will be used for the returned DocumentReference.
+
+collection = Table
+document = record
+
+useContext chúng ta có thể chia sẻ state tới các component, 
+useReducer thì cho phép chúng ta cập nhật giá trị mới cho state.

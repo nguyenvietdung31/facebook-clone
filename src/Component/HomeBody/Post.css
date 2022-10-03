@@ -25,7 +25,7 @@
     font-size: 14px;
 }
 
-.comments__show .container__comments {
+.comments_show .container_comments {
     display: flex;
     flex-direction: column;
     background-color: #3A3B3C;
@@ -35,26 +35,26 @@
     margin-bottom: 20px;
 }
 
-.comments__show .container__comments p span {
+.comments_show .container_comments p span {
     color: #fff;
     margin: 0;
     padding: 0;
 }
 
-.comments__show {
+.comments_show {
     display: flex;
     flex-direction: row;
     margin-top: -10px;
 }
 
 
-.comments__show.myself {
+.comments_show.myself {
     display: flex;
     flex-direction: row;
     border-left: 2px solid #4080FF;
 }
 
-.container__comments p {
+.container_comments p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
     line-height: 16px;
@@ -70,7 +70,7 @@
     white-space: normal;
 }
 
-.container__comments span {
+.container_comments span {
     color: #385898;
     font-weight: 700;
 }
@@ -165,7 +165,7 @@
     margin-left: 10px;
 }
 
-.like2 {
+.liked {
     background-image: url(https://i.ibb.co/XLsnX3w/del.png);
     background-size: 20px 20px;
     background-repeat: no-repeat;
@@ -176,7 +176,7 @@
 }
 
 
-.like2.blue {
+.liked.blue {
     background-image: url(https://facebook.com/rsrc.php/v3/yL/r/bDzlg9kYh_x.png);
     background-size: 26px 766px;
     background-repeat: no-repeat;
@@ -319,7 +319,7 @@
     border-radius: 5px;
 }
 
-.transparent__submit {
+.transparent_submit {
     display: none;
 }
 

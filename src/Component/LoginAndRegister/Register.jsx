@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { useNavigate , Link} from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { auth, db } from '../../Firebase/firebase';
 import './Register.css'
 
@@ -10,18 +10,18 @@ function Register() {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [birthday,setBirthday] = useState([]);
+  const [birthday, setBirthday] = useState([]);
   const [gender, setGender] = useState('');
 
-  const handleRegister = (e) =>{
+  const handleRegister = (e) => {
     e.preventDefault();
-    auth.createUserWithEmailAndPassword(email,password).then((auth)=>{ // tao data cua firebase
-      if(auth.user){
+    auth.createUserWithEmailAndPassword(email, password).then((auth) => { // tao data cua firebase
+      if (auth.user) {
         auth.user.updateProfile({
           displayName: firstName + " " + lastName,
           photoURL: "https://vnn-imgs-a1.vgcloud.vn/image1.ictnews.vn/_Files/2020/03/17/trend-avatar-1.jpg"
 
-        }).then((s)=>{
+        }).then(() => {
           db.collection('users').doc(auth.user.uid).set({
             uid: auth.user.uid,
             displayName: auth.user.displayName,
@@ -30,7 +30,7 @@ function Register() {
             birthday,
             gender,
             bio: ""
-          }).then((r)=>{
+          }).then(() => {
             navigate("/login") // dang ki thanh cong thi chuyen den /login
           })
         })
@@ -47,7 +47,7 @@ function Register() {
       <div className='register_container'>
         <h3>Sign up</h3>
         <p>It's quick and easy</p>
-        <div className='hr3'/>
+        <div className='hr3' />
         <form>
           <div className='row'>
             <input
@@ -83,7 +83,7 @@ function Register() {
           </center>
           <h5 className='register_date'>Date of birth</h5>
           <div className='row'>
-            <select className='register_day' onChange={(e)=>setBirthday([...birthday,e.target.value])}>
+            <select className='register_day' onChange={(e) => setBirthday([...birthday, e.target.value])}>
               <option value='Day'>Day</option>
               <option value='1'>1</option>
               <option value='2'>2</option>
@@ -118,8 +118,8 @@ function Register() {
               <option value='31'>31</option>
             </select>
 
-            <select className='register_month' onChange={(e)=>setBirthday([...birthday,e.target.value])}>
-            <option value='Day'>Month</option>
+            <select className='register_month' onChange={(e) => setBirthday([...birthday, e.target.value])}>
+              <option value='Day'>Month</option>
               <option value='1'>January</option>
               <option value='2'>February</option>
               <option value='3'>March</option>
@@ -134,8 +134,8 @@ function Register() {
               <option value='12'>December</option>
             </select>
 
-            <select className='register_year' onChange={(e)=>setBirthday([...birthday,e.target.value])}>
-            <option value='Day'>Year</option>
+            <select className='register_year' onChange={(e) => setBirthday([...birthday, e.target.value])}>
+              <option value='Day'>Year</option>
               <option value='2000'>2010</option>
               <option value='1999'>2009</option>
               <option value='1998'>2008</option>
@@ -190,9 +190,9 @@ function Register() {
             </div>
           </div>
           <p className='register_policy'>
-          Users of our service may have uploaded your contact information to Facebook. Learn more.
-          By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookie Policy. 
-          You can receive our notifications via SMS and unsubscribe at any time.
+            Users of our service may have uploaded your contact information to Facebook. Learn more.
+            By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookie Policy.
+            You can receive our notifications via SMS and unsubscribe at any time.
           </p>
           <center>
             <button onClick={handleRegister} type='submit' className='btn_register'>Sign Up</button>

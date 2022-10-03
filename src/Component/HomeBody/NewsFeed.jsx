@@ -21,14 +21,14 @@ function NewsFeed({ user }) {
         post: doc.data(),
       })))
     })
-  }, [])
+  }, []) // query bản ghi posts theo thời gian thứ tự desc trả về snapshot
   return (
     <div className='newsfeed'>
       <Upload />
       {
         newsFeed.map(({ id, post }) => (
           < Post key={id} postId={id} user={user} username={post.username}
-            caption={post.caption} imageUrl={post.imageUrl} noLikes={post.noLikes}
+            caption={post.caption} imageUrl={post.imageUrl} noLike={post.noLike}
             postUserId={post.uid} />
         ))
       }
