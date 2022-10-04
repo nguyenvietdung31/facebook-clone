@@ -13,15 +13,15 @@ function NewsFeed({ user }) {
   if (user === undefined) {
     navigate('/login')
   }
-
+  // lấy toàn bộ post và hiển thị lên newsfeed
   useEffect(() => {
-    db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
+    db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => { // query bản ghi posts theo thời gian thứ tự desc trả về snapshot
       setNewsFeed(snapshot.docs.map(doc => ({
         id: doc.id,
         post: doc.data(),
       })))
     })
-  }, []) // query bản ghi posts theo thời gian thứ tự desc trả về snapshot
+  }, []) 
   return (
     <div className='newsfeed'>
       <Upload />
@@ -29,7 +29,7 @@ function NewsFeed({ user }) {
         newsFeed.map(({ id, post }) => (
           < Post key={id} postId={id} user={user} username={post.username}
             caption={post.caption} imageUrl={post.imageUrl} noLike={post.noLike}
-            postUserId={post.uid} />
+            postUserId={post.uid}/>
         ))
       }
     </div>

@@ -1,0 +1,92 @@
+.profile_topSection {
+    background-color: #242526;
+    height: fit-content
+}
+
+.profile_coverPhoto {
+    background-color: #18191A;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-top: 190px;
+    z-index: 0;
+}
+
+.profileAvatar {
+    margin-left: 0;
+    height: 160px !important;
+    width: 160px !important;
+    border: 5px solid #242526;
+    margin-bottom: -5px;
+    border-radius: 80px;
+    cursor: pointer;
+}
+
+.modalInit h1 {
+    color: white !important;
+}
+
+.profile_topSection h1 {
+    text-align: center;
+    font-size: 32px;
+    color: white;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.hr4 {
+    height: 1px;
+    width: 100%;
+    background-color: #3E4042;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.profileHeader_options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profileHeader_left ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.profileHeader_left ul li {
+    margin: 0;
+    font-size: 15px;
+    color: #b0b3b8;
+    font-weight: 600;
+    border-radius: 5px !important;
+    margin-bottom: 10px;
+}
+
+.profileHeader_left ul li:hover {
+    background-color: #3A3B3C !important;
+}
+
+.profileHeader_left ul .selected {
+    color: #2E89FF;
+    border-radius: 0px !important;
+    border-bottom: 3px solid #2E89FF;
+    margin-left: 45%;
+    margin-bottom: 0px !important;
+}
+
+.profileHeader_left ul .selected:hover {
+    background-color: transparent !important;
+}
+
+.postsAndIntro {
+    display: flex;
+    flex-direction: row;
+}
+
+.postAndWatch {
+    display: flex;
+    flex-direction: column;
+    flex: 0.6;
+    margin-left: 200px;
+}

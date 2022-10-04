@@ -4,7 +4,7 @@ import Avatar from '@mui/material/Avatar';
 import { db } from '../../Firebase/firebase';
 import firebase from "firebase/compat/app";
 
-function Post({ postId, user, username, caption, imageUrl, noLike, postUserId }) {
+function Post({ postId, user, username, caption, imageUrl, noLike, postUserId, timestamp }) {
 
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState('');
@@ -14,7 +14,7 @@ function Post({ postId, user, username, caption, imageUrl, noLike, postUserId })
 
     const [postUser, setPostUser] = useState();
 
-    //Use to get the user's credentials who has posted the post/image
+    //Sử dụng để lấy thông tin đăng nhập của người dùng đã đăng bài đăng / hình ảnh
     useEffect(() => {
         if (postUserId) {
             db.collection('users').doc(postUserId).onSnapshot((snapshot) => {
@@ -23,7 +23,7 @@ function Post({ postId, user, username, caption, imageUrl, noLike, postUserId })
         }
     }, [postUserId])
 
-    // use to get all comments
+    // sử dụng để lấy tất cả các bình luận
     useEffect(() => {
         let unsubscribe;
         if (postId) {

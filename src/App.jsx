@@ -8,6 +8,7 @@ import HomeHeader from './Component/HomeHeader/HomeHeader.jsx';
 import Sidebar from './Component/HomeBody/Sidebar.jsx';
 import Sidebar2 from './Component/HomeBody/Sidebar2.jsx';
 import NewsFeed from './Component/HomeBody/NewsFeed.jsx';
+import Profile from './Component/Profile/Profile.jsx'
 
 function App() {
 
@@ -50,6 +51,14 @@ function App() {
             </>}
             user={user}
             selected>
+          </Route>
+          <Route
+            path='/:username/:uid'
+            element={<>
+              <HomeHeader user={user} />
+              <Profile user={user} />
+            </>}
+            user={user}>
           </Route>
         </Routes>
       </Router>
