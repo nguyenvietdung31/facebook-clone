@@ -18,16 +18,16 @@ function NewsFeed({ user }) {
     db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => { // query bản ghi posts theo thời gian thứ tự desc trả về snapshot
       setNewsFeed(snapshot.docs.map(doc => ({
         id: doc.id,
-        post: doc.data(),
+        post: doc.data(), //Retrieves all fields in the document as an Object.
       })))
     })
   }, []) 
   return (
     <div className='newsfeed'>
-      <Upload />
+      <Upload/>
       {
         newsFeed.map(({ id, post }) => (
-          < Post key={id} postId={id} user={user} username={post.username}
+          <Post key={id} postId={id} user={user} username={post.username}
             caption={post.caption} imageUrl={post.imageUrl} noLike={post.noLike}
             postUserId={post.uid}/>
         ))

@@ -2,10 +2,9 @@ import React from 'react';
 import './HomeHeader.css';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect, Fragment } from 'react';
+import { useState, useEffect } from 'react';
 import { auth, db } from '../../Firebase/firebase';
 import Avatar from '@mui/material/Avatar';
-import { useStateValue } from '../../StateProvider';
 
 function HomeHeader({ user, selected }) {
   const navigate = useNavigate('');
@@ -13,7 +12,6 @@ function HomeHeader({ user, selected }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
-  const [{ notifications },] = useStateValue();//////
   const [profileDown, setProfileDown] = useState(false);
 
   if (user === false) {
@@ -65,27 +63,6 @@ function HomeHeader({ user, selected }) {
       document.getElementsByClassName('dropdown-content2')[0].classList.add('block')
     }
   }
-
-  // useEffect(() => {
-  //   db.collection('posts').onSnapshot((snapshot) => {
-  //     snapshot.docs.forEach((doc) => {
-  //       if (user && doc.data().username === user.displayName) { // checking for only the currently logged in users post
-  //         db.collection('posts').doc(doc.id).collection('comments').onSnapshot((snapshot2) => {
-  //           snapshot2.docs.forEach(doc2 => {
-  //             if (user && doc2.data().username !== user.displayName) {
-  //               dispatchEvent({
-  //                 type: 'ADD_TO_NOTIFICATIONS',
-  //                 item: {
-  //                   notification: doc.data(),
-  //                 }
-  //               })
-  //             }
-  //           })
-  //         })
-  //       }
-  //     })
-  //   })
-  // }, [user])
 
   const renderProfile = () => {
     if (profileDown) {
@@ -164,23 +141,11 @@ function HomeHeader({ user, selected }) {
         </div>
       </div>
       <div className='homeHeader_otherIcons'>
-        <div className='round_profile'>
-          <a href={`${user?.displayName}/${user?.uid}`}>
-            {
-              user && (
-                <Fragment>
-                  <Avatar className='ProfileAvatar' src={user.photoURL}></Avatar>
-                  <p>{user.displayName}</p>
-                </Fragment>
-              )
-            }
-          </a>
-        </div>
         <div className="round">
           <svg fill="currentColor" viewBox="0 0 44 44" width="1em" height="1em" className="menuIcon"><circle cx="7" cy="7" r="6"></circle><circle cx="22" cy="7" r="6"></circle><circle cx="37" cy="7" r="6"></circle><circle cx="7" cy="22" r="6"></circle><circle cx="22" cy="22" r="6"></circle><circle cx="37" cy="22" r="6"></circle><circle cx="7" cy="37" r="6"></circle><circle cx="22" cy="37" r="6"></circle><circle cx="37" cy="37" r="6"></circle></svg>
         </div>
 
-        <div className="round">
+        <div className="round" >
           <svg viewBox="0 0 28 28" alt="" className="messengerIcon" height="20" width="20"><path d="M14 2.042c6.76 0 12 4.952 12 11.64S20.76 25.322 14 25.322a13.091 13.091 0 0 1-3.474-.461.956 .956 0 0 0-.641.047L7.5 25.959a.961.961 0 0 1-1.348-.849l-.065-2.134a.957.957 0 0 0-.322-.684A11.389 11.389 0 0 1 2 13.682C2 6.994 7.24 2.042 14 2.042ZM6.794 17.086a.57.57 0 0 0 .827.758l3.786-2.874a.722.722 0 0 1 .868 0l2.8 2.1a1.8 1.8 0 0 0 2.6-.481l3.525-5.592a.57.57 0 0 0-.827-.758l-3.786 2.874a.722.722 0 0 1-.868 0l-2.8-2.1a1.8 1.8 0 0 0-2.6.481Z"></path></svg>
         </div>
 
@@ -189,29 +154,9 @@ function HomeHeader({ user, selected }) {
         </div>
         <div className='dropdown-content2'>
           <h1>Notifications</h1>
-          {
-            notifications.length === 0 ? (
               <div className='noNotifDiv'>
-                {/* <img src={user && user.photoURL} alt='' /> */}
                 <h1 className='NoNotif'>It seems that there are no active notifications</h1>
               </div>
-            ) : (
-              console.log()
-            )
-          }
-
-          {
-            notifications.map(({ notification }) => (
-              <a href='/#' className='announcement'>
-                <div className='optionDrop'>
-                  <Avatar src='' />
-                  <div className='announcementInfo'>
-                    <h1>{notification.username} comment to your post</h1>
-                  </div>
-                </div>
-              </a>
-            ))
-          }
         </div>
         <div className='round' onClick={renderProfile}>
           <i className={`dropdownIcon ${profileDown === true && 'blue'}`} >

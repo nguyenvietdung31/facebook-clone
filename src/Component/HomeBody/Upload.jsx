@@ -13,6 +13,7 @@ function Upload() {
     const [imageURL, setImageURL] = useState('');
     const [caption, setCaption] = useState('');
     const [noLike, setNoLike] = useState(0);
+    const [progress, setProgress] = useState(0);
 
     const handleChange = (e) => { /// upload file (picture)
         if (e.target.files[0]) {
@@ -46,6 +47,7 @@ function Upload() {
                 uid: user?.uid
             });
             handleClose();
+            setProgress(0);
             setCaption('');
             setImage(null)
         }
@@ -53,6 +55,16 @@ function Upload() {
             const uploadTask = storage.ref(`images/${image.name}`).put(image); // // Receives the storage reference and the file to upload.
             uploadTask.on(
                 'state_changed',
+                (snapshot) => {
+                    const progress = Math.round(
+                        (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                    );
+                    setProgress(progress);
+                },
+                (error) => {
+                    console.log(error);
+                    alert(error.message);
+                },
                 () => {
                     storage
                         .ref('images') // Returns a reference for the given path in the default bucket.
@@ -68,6 +80,7 @@ function Upload() {
                                 uid: user?.uid
                             });
                             handleClose();
+                            setProgress(0);
                             setCaption('')
                             setImage(null)
                         })
@@ -105,6 +118,7 @@ function Upload() {
                         <img src={imageURL} className='reviewImage' alt='' />
                     </div>
                     <img alt='' className='colorAa' src='https://facebook.com/images/composer/SATP_Aa_square-2x.png' />
+                    <progress value={progress} className="hidden" max="100" />
                     <div className='publishOptions'>
                         <div className='left' onClick={uploadFileWithClick}>
                             <h1>Add to post</h1>

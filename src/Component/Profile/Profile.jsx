@@ -18,7 +18,7 @@ function Profile({ user }) {
         db.collection('users').doc(uid).onSnapshot((doc) => {
             setProfileUserData(doc.data());
         })
-    }, [])
+    }, [uid])
 
     if (profileUserData !== undefined) {
         if (profileUserData?.displayName !== user?.displayName) {
@@ -26,7 +26,7 @@ function Profile({ user }) {
             document.getElementById('documentUsername').style.marginBottom = '20px';
         }
     }
-    document.title = `${username}`
+    document.title = `${username} || Facebook`
 
     useEffect(() => {
         db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => { // query bản ghi posts theo thời gian thứ tự desc trả về snapshot
@@ -41,7 +41,7 @@ function Profile({ user }) {
         <div className='profile'>
             <div className='profile_topSection'>
                 <div className='profile_coverPhoto'>
-                    <img src={profileUserData?.photoURL} className='profileAvatar' />
+                    <img src={profileUserData?.photoURL} className='profileAvatar' alt='' />
                 </div>
 
                 <h1 id='documentUsername'>{username}</h1>

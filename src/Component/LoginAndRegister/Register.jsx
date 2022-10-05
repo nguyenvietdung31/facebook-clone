@@ -62,7 +62,7 @@ function Register() {
               className='register_name'
               type='name'
               placeholder='Last Name'
-              required
+              required= "required"
             />
           </div>
           <center>
@@ -70,7 +70,7 @@ function Register() {
               onChange={(e) => { setEmail(e.target.value) }}
               type='email'
               placeholder='Email'
-              required
+              required= "required"
             />
           </center>
           <center>
@@ -78,7 +78,7 @@ function Register() {
               onChange={(e) => { setPassword(e.target.value) }}
               type='password'
               placeholder='Password'
-              required
+              required= "required"
             />
           </center>
           <h5 className='register_date'>Date of birth</h5>
@@ -195,7 +195,7 @@ function Register() {
             You can receive our notifications via SMS and unsubscribe at any time.
           </p>
           <center>
-            <button onClick={handleRegister} type='submit' className='btn_register'>Sign Up</button>
+            <button onSubmit={handleRegister} type='submit' className='btn_register'>Sign Up</button>
           </center>
           <center>
             <Link to='/login'>
