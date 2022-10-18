@@ -59,6 +59,8 @@ function Upload() {
                     const progress = Math.round(
                         (snapshot.bytesTransferred / snapshot.totalBytes) * 100
                     );
+                    // bytesTransferred : 	Tổng số byte đã được chuyển khi snapshot này được chụp.
+                    // totalBytes: Tổng số byte dự kiến sẽ được tải lên.
                     setProgress(progress);
                 },
                 (error) => {
@@ -67,9 +69,9 @@ function Upload() {
                 },
                 () => {
                     storage
-                        .ref('images') // Returns a reference for the given path in the default bucket.
-                        .child(image.name) // Returns a reference to a relative path from this reference.
-                        .getDownloadURL() // Fetches a long lived download URL for this object.
+                        .ref('images') // Trả về một tham chiếu cho đường dẫn đã cho trong nhóm mặc định.
+                        .child(image.name) // Trả về một tham chiếu đến một đường dẫn tương đối từ tham chiếu này.
+                        .getDownloadURL() // Tìm nạp một URL tải xuống tồn tại lâu dài cho đối tượng này.
                         .then(url => { // then: Attaches callbacks for the resolution and/or rejection of the Promise.
                             db.collection('posts').add({
                                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),

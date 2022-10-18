@@ -515,3 +515,14 @@ ul li a {
   margin-top: 5px;
   margin-left: 3px;
 }
+@media screen and (max-width: 1280px) {
+  .homeHeader_pages {
+    margin-left: 50px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .homeHeader_otherIcons, .market, .groups {
+    display: none;
+  }
+
+}

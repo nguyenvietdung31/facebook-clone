@@ -16,3 +16,8 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+@media screen and (max-width: 1280px) {
+    .newsfeed {
+        margin-left:0%;
+    }
+  }

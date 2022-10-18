@@ -15,7 +15,7 @@
     border: 1px solid #dddfe2;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
-    height: 320px;
+    height: 350px;
     width: 400px;
     background-color: white;
     text-align: center;
@@ -39,20 +39,23 @@
     font-size: 17px;
     vertical-align: middle;
 }
+.login_container > form > center > input:focus{
+    outline: #1877f2;
+}
 .btn_login{
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    font-weight: bold;
-    justify-content: center;
-    background-color: #1877f2;
-    border: none;
-    border-radius: 6px;
-    font-size: 20px;
-    line-height: 40px;
-    padding: 0 16px;
-    width: 332px;
-    color: white;
+    cursor: pointer !important;
+    display: inline-block !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    justify-content: center !important;
+    background-color: #1877f2 !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-size: 20px !important;
+    line-height: 40px !important;
+    padding: 0 16px !important;
+    width: 332px !important;
+    color: white !important;
 }
 .sideInfo{
     display: flex;
@@ -74,4 +77,11 @@
 }
 .sideInfo h5:hover{
     text-decoration: underline;
+}
+.error_login {
+    color: red;
+  }
+.error_login::before {
+    display: inline;
+    content: "⚠This field is required ";
 }

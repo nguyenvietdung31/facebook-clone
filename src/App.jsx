@@ -53,7 +53,7 @@ function App() {
             selected>
           </Route>
           <Route
-            path='/:username/:uid'
+            path='/:uid'
             element={<>
               <HomeHeader user={user} />
               <Profile user={user} />

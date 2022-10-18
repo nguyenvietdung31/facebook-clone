@@ -24,7 +24,7 @@ function Post({ postId, user, username, caption, imageUrl, noLike, postUserId,})
     }, [postUserId])
 
     // sử dụng để lấy tất cả các bình luận
-    useEffect(() => {
+    useEffect(() => { // Detach a listener
         let unsubscribe;
         if (postId) {
             unsubscribe = db.collection("posts").doc(postId).collection("comments").orderBy("timestamp", "desc").onSnapshot((snapshot) => {
@@ -32,7 +32,7 @@ function Post({ postId, user, username, caption, imageUrl, noLike, postUserId,})
             });
         }
         return () => {
-            unsubscribe(); // A function returned by onSnapshot() that removes the listener
+            unsubscribe(); // Stop listening to changes
         }
     }, [postId]);
 
@@ -46,34 +46,34 @@ function Post({ postId, user, username, caption, imageUrl, noLike, postUserId,})
             setShow2('textforlike')
         }
 
-        db.collection('posts') // tham chiếu đến collection tên là posts
-            .doc(postId)//lấy dữ liệu theo tham số postID
-            .get()//Reads the document referred to by this DocumentReference.
+        db.collection('posts') 
+            .doc(postId)
+            .get()
             .then(docs => { // truyền tham số docs (docs: firebase.firestore.DocumentSnapshot<firebase.firestore.DocumentData>)
-                const data = docs.data() // data: Retrieves all fields in the document as an Object. Returns 'undefined' if the document doesn't exist.
+                const data = docs.data()
                 console.log(show)
-                if (show === 'liked') { // nếu trạng thái của show là liked thì tham chiếu đến
-                    db.collection("posts")// collection posts
-                        .doc(postId)//lấy dữ liệu theo tham số postID
-                        .collection("likes")//nếu trạng thái của show là liked thì tham chiếu đến collection likes
-                        .doc(user.uid)// lấy dữ liệu theo tham số uid
+                if (show === 'liked') {
+                    db.collection("posts")
+                        .doc(postId)
+                        .collection("likes")
+                        .doc(user.uid)
                         .get()
-                        .then(docs => {//truyền tham số docs
-                            if (docs.data()) {// nếu đã tồn tại data (ở đây là like hay chưa like)
+                        .then(docs => {
+                            if (docs.data()) {
                                 console.log(docs.data())
                             } else {
-                                db.collection("posts").doc(postId).collection("likes").doc(user.uid).set({ // tạo likes = 1
+                                db.collection("posts").doc(postId).collection("likes").doc(user.uid).set({ 
                                     likes: 1
                                 });
-                                db.collection('posts').doc(postId).update({ // cập nhật noLike ở posts
+                                db.collection('posts').doc(postId).update({ 
                                     noLike: data.noLike + 1
                                 });
                             }
                         })
 
-                } else { // bỏ like
-                    db.collection('posts').doc(postId).collection('likes').doc(user.uid).delete().then(function () {// xóa likes = 1
-                        db.collection('posts').doc(postId).update({// cập nhật noLike ở posts
+                } else {
+                    db.collection('posts').doc(postId).collection('likes').doc(user.uid).delete().then(function () {
+                        db.collection('posts').doc(postId).update({
                             noLike: data.noLike - 1
                         });
                     })
@@ -94,7 +94,7 @@ function Post({ postId, user, username, caption, imageUrl, noLike, postUserId,})
         setComment('');
     }
 
-    useEffect(() => {// hiển thị ảnh của người post
+    useEffect(() => {
         if (postUserId) {
             db.collection('users').doc(postUserId).onSnapshot((snapshot) => {
                 setPosterImage(snapshot.data().photoURL)
@@ -113,7 +113,7 @@ function Post({ postId, user, username, caption, imageUrl, noLike, postUserId,})
                     src={posterImage !== '' && posterImage}
                 />
                 <h3 onClick={() => {
-                    window.location.href = `/${username}/${user?.uid}`
+                    window.location.href = `/${user?.uid}`
                 }} style={{ cursor: 'pointer' }}>{username}</h3>
             </div>
 

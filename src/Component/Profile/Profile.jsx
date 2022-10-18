@@ -10,7 +10,7 @@ import NewsFeed from '../HomeBody/NewsFeed';
 
 function Profile({ user }) {
     const navigate = useNavigate('');
-    const { username, uid } = useParams();/////
+    const { username, uid } = useParams();
     const [profileUserData, setProfileUserData] = useState();
     const [newsFeed, setNewsFeed] = useState([]);
 

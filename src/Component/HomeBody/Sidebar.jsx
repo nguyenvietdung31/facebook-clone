@@ -7,7 +7,7 @@ function Sidebar({ user }) {
 
     return (
         <div className='sidebar'>
-            <Link to={`${user?.displayName}/${user?.uid}`}>
+            <Link to={`/${user?.uid}`}>
                 <SidebarRow avatar ImageLink={user?.photoURL} title={user?.displayName} />
             </Link>
             <SidebarRow ImageLink="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/tSXYIzZlfrS.png" title="Find Friends" />
@@ -24,7 +24,7 @@ function Sidebar({ user }) {
 
             <div className='hr' />
             <div className='shortcut'>
-                <h4>Shortcut</h4>
+                <h3>Shortcut</h3>
             </div>
             <SidebarRow ImageLink="https://static.xx.fbcdn.net/rsrc.php/v3/yb/r/eECk3ceTaHJ.png" title="Recently" />
             <SidebarRow ImageLink="https://static.xx.fbcdn.net/rsrc.php/v3/y5/r/4Y9Xi2D3hJv.png" title="Messenger" />

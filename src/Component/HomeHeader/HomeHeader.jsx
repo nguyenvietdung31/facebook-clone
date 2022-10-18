@@ -106,7 +106,7 @@ function HomeHeader({ user, selected }) {
               users !== undefined && (
                 filteredUsers.map((user1) => (
                   <li key={user1.uid}>
-                    <a onClick={collapseNavbar} href={`/${user1.displayName}/${user1.uid}`}>
+                    <a onClick={collapseNavbar} href={`/${user1.uid}`}>
                       <Avatar className='searchAvatar' src={user1.photoURL} />
                       <h3 className='searchH3'>{user1.displayName}</h3>
                     </a>
@@ -163,7 +163,7 @@ function HomeHeader({ user, selected }) {
             <svg fill="currentColor" viewBox="0 0 16 16" width="1em" height="1em" className="dropdownIcon"><g fill-rule="evenodd" transform="translate(-448 -544)"><path fill-rule="nonzero" d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"></path></g></svg>
           </i>
           <div className='dropdown-content'>
-            <a href={`${user?.displayName}/${user?.uid}`}>
+            <a href={`/${user?.uid}`}>
               <div className='optionDrop'>
                 <img src='https://i.ibb.co/1zmBtwr/84241059-189132118950875-4138507100605120512-n.jpg' className='Avatar' alt='' />
                 <div className='sideinfoDropAvatar'>
